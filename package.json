@@ -1,5 +1,5 @@
 {
-  "name": "generator-barephp",
+  "name": "generator-custom-barephp",
   "version": "1.0.0-rc.7",
   "description": "PHP project scaffold with lots of integrations",
   "keywords": [
@@ -25,41 +25,41 @@
     "phpmyadmin",
     "browsersync"
   ],
-  "homepage": "https://github.com/juliangut/generator-barephp",
+  "homepage": "https://github.com/stormiix/generator-barephp",
   "license": "BSD-3-Clause",
-  "bugs": "https://github.com/juliangut/generator-barephp/issues",
+  "bugs": "https://github.com/stormiix/generator-barephp/issues",
   "author": {
-    "name": "Julián Gutiérrez",
-    "email": "juliangut@gmail.com",
-    "url": "http://juliangut.com"
+    "name": "Anas Mazouni",
+    "email": "madadj4@gmail.com",
+    "url": "https://stormix.co"
   },
   "repository": {
     "type": "git",
-    "url": "git://git@github.com/juliangut/generator-barephp.git"
+    "url": "git://git@github.com/stormiix/generator-barephp.git"
   },
   "main": "app/index.js",
   "scripts": {
     "test": "mocha"
   },
   "dependencies": {
-    "chalk": "^1.1.0",
-    "mkdirp": "^0.5.1",
-    "shelljs": "^0.5.3",
-    "sprintf-js": "^1.0.3",
-    "underscore.string": "^3.1.1",
-    "util": "^0.10.3",
-    "validator": "^4.7.1",
-    "yeoman-generator": "^0.21.0",
+    "chalk": "*",
+    "mkdirp": "*",
+    "shelljs": "*",
+    "sprintf-js": "*",
+    "underscore.string": "*",
+    "util": "*",
+    "validator": "*",
+    "yeoman-generator": "*",
     "yo": ">=1.0.0",
-    "yosay": "^1.0.5"
+    "yosay": "*"
   },
   "devDependencies": {
-    "gulp": "^3.9.0",
-    "gulp-jscs": "^3.0.0",
-    "gulp-jshint": "^2.0.0",
-    "jshint-stylish": "^2.2.0",
-    "mocha": "^2.2.0",
-    "run-sequence": "^1.2.0"
+    "gulp": "*",
+    "gulp-jscs": "*",
+    "gulp-jshint": "*",
+    "jshint-stylish": "*",
+    "mocha": "*",
+    "run-sequence": "*"
   },
   "engines": {
     "node": ">=0.10.0",

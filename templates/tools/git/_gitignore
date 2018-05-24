@@ -6,3 +6,6 @@ vendor/
 *.cache
 infection-log.*
 <%= dir.build %>/
+!cache/
+cache/*
+logs/*.log

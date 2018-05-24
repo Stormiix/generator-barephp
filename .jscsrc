@@ -1,7 +1,6 @@
 {
-  "preset": "google",
   "maxErrors": 20,
-  "maximumLineLength": 120,
+  "maximumLineLength": 200,
   "disallowEmptyBlocks": true,
   "requireOperatorBeforeLineBreak": false,
   "requireCamelCaseOrUpperCaseIdentifiers": "ignoreProperties",
