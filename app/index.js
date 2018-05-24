@@ -472,7 +472,7 @@ BarePHP.prototype.askCodeConfig = function() {
       type: 'list',
       name: 'phpVersion',
       message: 'What is the minimum supported PHP version for the project?',
-      choices: ['5.6', '7.0', '7.1', '7.2'],
+      choices: ['7.0', '7.1', '7.2'],
       default: this.defaults.project.phpVersion.toFixed(1)
     },
     {
@@ -935,15 +935,6 @@ BarePHP.prototype.writing = {
     };
 
     switch (this.defaults.project.phpVersion) {
-      case 5.6:
-        this.project.dependencies = [
-          ['symfony/polyfill-php70', '^1.0'],
-          ['symfony/polyfill-php71', '^1.0'],
-          ['symfony/polyfill-php72', '^1.0']
-        ];
-        this.project.phpunitVersion = '^5.7';
-        break;
-
       case 7.0:
         this.project.dependencies = [
           ['symfony/polyfill-php71', '^1.0'],
@@ -1016,19 +1007,7 @@ BarePHP.prototype.writing = {
     this.template('../../templates/tools/_composer.json', 'composer.json');
     this.template('../../templates/tools/npm/_package.json', 'package.json');
 
-    if (this.defaults.project.phpVersion < 7.0) {
-      this.template('../../templates/code/_Person-56.php', this.config.get('dirSrc') + '/Person.php');
-      this.template(
-        '../../templates/code/_PersonTest-56.php',
-        this.config.get('dirTests') + '/' + this.dir.testsSrc + '/PersonTest.php'
-      );
-      this.template('../../templates/code/_Greeter-56.php', this.config.get('dirSrc') + '/Greeter.php');
-      this.template(
-        '../../templates/code/_GreeterTest-56.php',
-        this.config.get('dirTests') + '/' + this.dir.testsSrc + '/GreeterTest.php'
-      );
-      this.template('../../templates/code/_bootstrap-56.php', this.config.get('dirTests') + '/bootstrap.php');
-    } else {
+    if (this.defaults.project.phpVersion >= 7.0) {
       this.template('../../templates/code/_Person.php', this.config.get('dirSrc') + '/Person.php');
       this.template(
         '../../templates/code/_PersonTest.php',
@@ -1040,15 +1019,12 @@ BarePHP.prototype.writing = {
         this.config.get('dirTests') + '/' + this.dir.testsSrc + '/GreeterTest.php'
       );
       this.template('../../templates/code/_bootstrap.php', this.config.get('dirTests') + '/bootstrap.php');
+        this.template('../../templates/tools/qa/_infection.json.dist', 'infection.json.dist');
+        this.template('../../templates/tools/qa/_phpstan.neon', 'phpstan.neon');
     }
 
     this.template('../../templates/tools/qa/_php_cs', '.php_cs');
     this.template('../../templates/tools/qa/_phpunit.xml.dist', 'phpunit.xml.dist');
-
-    if (this.defaults.project.phpVersion >= 7.0) {
-      this.template('../../templates/tools/qa/_infection.json.dist', 'infection.json.dist');
-      this.template('../../templates/tools/qa/_phpstan.neon', 'phpstan.neon');
-    }
 
     if (this.defaults.project.type === 'project') {
       this.template('../../templates/code/_index.php', this.config.get('dirPublic') + '/index.php');

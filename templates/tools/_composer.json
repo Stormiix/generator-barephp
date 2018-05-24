@@ -51,13 +51,21 @@ if (project.license != '') { -%>
     "roave/security-advisories": "dev-master",
     "sebastian/phpcpd": "^2.0"<% if (project.phpVersion >= 7.1) { -%>,
     "thecodingmachine/phpstan-strict-rules": "~0.9"<% } -%>,
-    "squizlabs/php_codesniffer": "^2.0"
+    "squizlabs/php_codesniffer": "^2.0",
+    "twig/twig": "~2.0",
+    "nochso/html-compress-twig": "^2.0",
+    "klein/klein": "^2.1",
+	"vlucas/phpdotenv": "^2.4",
+    "monolog/monolog": "^1.23",
+    "filp/whoops": "2.*"
   },
   "suggest": {
   },
   "autoload": {
     "psr-4": {
-      "<%= project.namespace.replace(/\\/g, '\\\\') %>\\": "src/"
+      "<%= project.namespace.replace(/\\/g, '\\\\') %>\\": "src/",
+       "<%= project.namespace.replace(/\\/g, '\\\\') %>\\Core\\": "src/Core/",
+       "<%= project.namespace.replace(/\\/g, '\\\\') %>\\App\\": "src/App/"
     }
   },
   "autoload-dev": {
