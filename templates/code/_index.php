@@ -21,7 +21,7 @@ declare(strict_types=1);
  * Composer
  */
 
-require dirname(__DIR__) . '/vendor/autoload.php';
+ require dirname(__DIR__) . '/../vendor/autoload.php';
 
 /**
  * Enviroment setup
@@ -29,8 +29,9 @@ require dirname(__DIR__) . '/vendor/autoload.php';
 
 use Dotenv\Dotenv;
 // Import .env variables and add them the enviroment
-$dotenv = new Dotenv(__DIR__."/../src/");
+$dotenv = new Dotenv(dirname(__DIR__)."/");
 $dotenv->load();
+
 
 /**
  * Logging
@@ -39,7 +40,7 @@ $dotenv->load();
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
-$stream = new StreamHandler('logs/main.log', Logger::DEBUG);
+$stream = new StreamHandler(dirname(__DIR__).'/logs/main.log', Logger::DEBUG);
 // Create a logger for the debugging-related stuff
 $logger = new Logger('debug');
 $logger->pushHandler($stream);
@@ -54,4 +55,4 @@ $whoops = new Whoops\Run();
 $whoops->register();
 $whoops->pushHandler(new Whoops\Handler\PrettyPageHandler());
 
-require_once('../App/Routes.php');
+require_once(dirname(__DIR__).'/App/Routes.php');

@@ -1,8 +1,8 @@
 <?php
 
-namespace Core;
+namespace <%= project.namespace %>\Core;
 
-use App\Config;
+use <%= project.namespace %>\App\Config;
 
 /**
  * View

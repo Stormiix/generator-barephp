@@ -3,10 +3,10 @@
 /**
  * Routing
  */
-$router = new Core\Router();
+$router = new <%= project.namespace %>\Core\Router();
 
 // Add the routes
-$router->respondWithController('GET', '/[:name]', 'Home@index');
+$router->respondWithController('GET', '/[:name]', 'HomeController@index');
 
 // Dispatch the router
 $router->dispatch();

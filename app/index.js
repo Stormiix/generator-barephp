@@ -964,7 +964,7 @@ BarePHP.prototype.writing = {
 		mkdirp(this.config.get('dirTests') + '/' + this.dir.testsSrc);
 
 		if (this.defaults.project.type === 'project') {
-			mkdirp(this.config.get('dirPublic'));
+			mkdirp(this.config.get('dirSrc') + "/" + this.config.get('dirPublic'));
 		}
 
 		if (this.config.get('controlDevEnv') === 'homestead') {
@@ -1028,7 +1028,7 @@ BarePHP.prototype.writing = {
 		this.template('../../templates/code/_bootstrap.php', this.config.get('dirTests') + '/bootstrap.php');
 
 		// CREATE TESTS
-		
+
 		// this.template(
 		// 	'../../templates/code/_GreeterTest.php',
 		// 	this.config.get('dirTests') + '/' + this.dir.testsSrc + '/GreeterTest.php'
@@ -1040,8 +1040,9 @@ BarePHP.prototype.writing = {
 		this.template('../../templates/tools/qa/_phpunit.xml.dist', 'phpunit.xml.dist');
 
 		if (this.defaults.project.type === 'project') {
-			this.template('../../templates/code/_index.php', this.config.get('dirPublic') + '/index.php');
-			this.template('../../templates/code/_.htaccess', this.config.get('dirPublic') + '/.htaccess');
+			var folderPub = this.config.get('dirSrc') + "/" + this.config.get('dirPublic');
+			this.template('../../templates/code/_index.php',  folderPub + '/index.php');
+			this.template('../../templates/code/_.htaccess', folderPub + '/.htaccess');
 		}
 	},
 

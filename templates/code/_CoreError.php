@@ -1,6 +1,6 @@
 <?php
 
-namespace Core;
+namespace <%= project.namespace %>\Core;
 
 /**
  * Error and exception handler

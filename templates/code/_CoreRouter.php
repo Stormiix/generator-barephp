@@ -1,6 +1,6 @@
 <?php
 
-namespace Core;
+namespace <%= project.namespace %>\Core;
 use \Klein\Klein;
 /**
  * Router
@@ -23,7 +23,7 @@ class Router extends Klein{
         if (class_exists($controller)) {
             //$callback = [new $controller($this->params),$action];
             $callback = [new $controller(),$action];
-            parent::respond($method, $path, $callback);    
+            parent::respond($method, $path, $callback);
         } else {
             throw new \Exception("Controller class $controller not found");
         }
@@ -36,7 +36,7 @@ class Router extends Klein{
      */
     protected function getNamespace()
     {
-        $namespace = 'App\Controllers\\';
+        $namespace = '<%= project.namespace %>\App\Controllers\\';
 
         //if (array_key_exists('namespace', $this->params)) {
         //    $namespace .= $this->params['namespace'] . '\\';

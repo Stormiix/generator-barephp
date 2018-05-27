@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace <%= project.namespace %>\App;
 
 /**
  * Application configuration
@@ -39,7 +39,7 @@ class Config
      * @var boolean
      */
     const SHOW_ERRORS = true;
-    
+
     /**
      * Cache location
      * @var string

@@ -1,15 +1,14 @@
 <?php
 
-namespace App\Models;
-
+namespace <%= project.namespace %>\App\Models;
 use PDO;
-
+use <%= project.namespace %>\Core\Model;
 /**
  * Example user model
  *
  * PHP version 7.0
  */
-class User extends \Core\Model
+class User extends Model
 {
 
     /**

@@ -1,7 +1,6 @@
 <?php
 
-namespace Core;
-
+namespace <%= project.namespace %>\Core;
 use PDO;
 use App\Config;
 

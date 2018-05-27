@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Controllers;
+namespace <%= project.namespace %>\App\Controllers;
 
-use \Core\View;
-
+use <%= project.namespace %>\Core\View;
+use <%= project.namespace %>\Core\Controller;
 /**
  * Home controller
  *
  * PHP version 7.0
  */
-class Home extends \Core\Controller
+class HomeController extends Controller
 {
 
     /**

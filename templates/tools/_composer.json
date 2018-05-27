@@ -63,9 +63,7 @@ if (project.license != '') { -%>
   },
   "autoload": {
     "psr-4": {
-      "<%= project.namespace.replace(/\\/g, '\\\\') %>\\": "src/",
-       "<%= project.namespace.replace(/\\/g, '\\\\') %>\\Core\\": "src/Core/",
-       "<%= project.namespace.replace(/\\/g, '\\\\') %>\\App\\": "src/App/"
+      "<%= project.namespace.replace(/\\/g, '\\\\') %>\\": "src/"
     }
   },
   "autoload-dev": {
